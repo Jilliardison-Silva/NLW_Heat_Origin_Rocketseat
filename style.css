@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+}
+
+html,
+body{
+    --grey: hsl(240, 9%, 89%)
+
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased; /* Usado para deixar a fonte mais suavel se o navegador permitir */
+}
+
+body{
+    display: grid;
+    place-items: center;
+}
+
+main{
+    background: url(images/Background.svg);
+    width: 375px;
+    height: 812px;
+}
+
+.container{
+    background-color: red;
+    max-width: 250px;
+    margin: auto;
+    text-align: center;
+}
+
+.avatar{
+    width: 10rem; /* fonte padrao de pagina tem 16px = 1rem */
+    margin: 11.5rem auto 0;
+}
+
+h1{
+    font-size: 1.5rem;
+}
