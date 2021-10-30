@@ -4,36 +4,79 @@
 
 html,
 body{
-    --grey: hsl(240, 9%, 89%)
-
+    --black: rgb(25, 25, 27);
+    --grey: rgb(196, 194, 194);/* definindo variavel grey */
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    -webkit-font-smoothing: antialiased; /* Usado para deixar a fonte mais suavel se o navegador permitir */
+    -webkit-font-smoothing: antialiased; /* Usado para deixar a fonte mais suavel se o navegador permitir, que são webkit */
 }
 
 body{
     display: grid;
-    place-items: center;
+    place-items: center; /* coloca os itens centralizados */
 }
 
 main{
-    background: url(images/Background.svg);
+    background: url(images/background.svg);
     width: 375px;
     height: 812px;
+    
 }
 
 .container{
-    background-color: red;
     max-width: 250px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    
+    color: var(--grey);
 }
 
 .avatar{
     width: 10rem; /* fonte padrao de pagina tem 16px = 1rem */
     margin: 11.5rem auto 0;
+    position: relative; /* Definindo que caixa seja a referencia de limite para .avatar span */
+}
+
+.avatar span{
+    position: absolute; /* permite cliar nivel de empilhamento, onde uma imagem fifque a sobre a outra */
+    top: -15px;
+    z-index: 1; /* propriedade que configura a profundidade do item*/
+
+}
+
+.avatar > img { /* a seta esta definindo que propriedade de escolha esta no primeiro nivel comparado as outras, seguindo o empilhamento */
+    width: 10rem;
+    height: 11.5rem;
+    object-fit: cover; /* voltando a proporção correta da imagem, onde a mesma esta se adaptando, cobrindo todo o espaço */
+    clip-path: polygon(50% 0,100% 25%,100% 75%, 50% 100%, 0 75%, 0 25%); /* gerando imagem de um poligono, estruturando as dimensões a sua escolha, ferramenta que facilita e ajuda a criação =>> bennettfeely.com/clippy/ */
+
 }
 
 h1{
     font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+a{
+    color: var(--grey);
+    text-decoration: none;
+    margin-top: 0.25rem;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center; /* confirmando alinhamento dos itens ao centro */
+}
+
+p{
+    margin-top: 2rem;
+}
+
+ul{
+    margin-top: 4rem;
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    display: flex; /* fazendo com que as caixas fiquem uma do lado da outra */
+    gap: 0.5rem; /* cria espaço entre os itens */
+    justify-content: center; /* justificando os itens ao centro, text-aling não funciona pq ele é usado para itens com propriedades de texto */
 }
