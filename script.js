@@ -15,5 +15,21 @@ function ChangeSocialMediaLink(){
         li.children[0].href = `http://${social}.com/${LinksSocialMedia[social]}` 
     }
 }
-
 ChangeSocialMediaLink()
+
+function GetGitHubProfileInfos(){
+    const url = `https://api.github.com/users/${LinksSocialMedia.github}`
+    // fetch esta pegando o que esta sendo retornado pela url, o then() nos entrega o que foi obtido pelo fetch
+    fetch(url) // esta pegando a resposta da url
+    .then(response => response.json()) // arrow function == function anonima esta pegando o valor recebido e convertendo em dados json
+    .then(informations => {
+        userImage.src = informations.avatar_url
+        userName.textContent = informations.name
+        userBio.textContent = informations.bio
+        userGitHub.href = informations.html_url
+        userLogin.textContent = informations.login
+    })
+
+}
+
+GetGitHubProfileInfos()
