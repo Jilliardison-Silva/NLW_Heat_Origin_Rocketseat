@@ -9,6 +9,8 @@ body{
     height: 100%;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased; /* Usado para deixar a fonte mais suavel se o navegador permitir, que são webkit */
+    background: url(images/background_Desktop.svg) no-repeat center/cover fixed;
+    
 }
 
 body{
@@ -28,7 +30,6 @@ main{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    
     color: var(--grey);
 }
 
@@ -51,6 +52,10 @@ main{
     object-fit: cover; /* voltando a proporção correta da imagem, onde a mesma esta se adaptando, cobrindo todo o espaço */
     clip-path: polygon(50% 0,100% 25%,100% 75%, 50% 100%, 0 75%, 0 25%); /* gerando imagem de um poligono, estruturando as dimensões a sua escolha, ferramenta que facilita e ajuda a criação =>> bennettfeely.com/clippy/ */
 
+}
+
+#faixa{
+    display: none;
 }
 
 h1{
@@ -80,3 +85,77 @@ ul{
     gap: 0.5rem; /* cria espaço entre os itens */
     justify-content: center; /* justificando os itens ao centro, text-aling não funciona pq ele é usado para itens com propriedades de texto */
 }
+ 
+@media (min-width: 720px) {
+	/* estilos versão tablet  */
+    body {
+        background: url(images/background_Desktop.svg) no-repeat center/cover;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+        
+    main {
+        background: url(images/mask.svg) no-repeat center;
+        width: 358px;
+        height: 540px;
+    }
+    .avatar{
+        margin: 4.5rem auto 0;
+    }
+    ul{
+        margin-top: 2rem;
+    }
+    h2{
+        margin-top: 1rem;
+    }
+    p{
+        margin-top: 1rem;
+    }
+    #faixa{
+        display: block;
+        width: 10rem;
+        place-items: center;
+        margin-top: -12.3rem;
+        
+    }
+}
+
+@media (min-width: 960px) {
+	/* estilos versão desktop */
+    body {
+        background: url(images/background_Desktop.svg) no-repeat center/cover;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+    
+    main {
+        background: url(images/mask.svg) no-repeat center;
+        width: 358px;
+        height: 540px;
+    }
+    .avatar{
+        margin: 4.5rem auto 0;
+    }
+    ul{
+        margin-top: 2rem;
+    }
+    h2{
+        margin-top: 1rem;
+    }
+    p{
+        margin-top: 1rem;
+    }
+    #faixa{
+        display: block;
+        width: 10rem;
+        place-items: center;
+        margin-top: -12.3rem;
+        
+    }
+    
+    
+
+}
+
